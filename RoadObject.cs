@@ -1,5 +1,4 @@
-using System.Data;
-
+п»ї
 namespace DecisionSupportSystem
 {
     public partial class RoadObject : Form
@@ -7,22 +6,6 @@ namespace DecisionSupportSystem
         public RoadObject()
         {
             InitializeComponent();
-            SelectRoadObject();
-        }
-
-        private void SelectRoadObject()
-        {
-            DataSet ds = DatabaseContext.ExecuteQuery("" +
-                "SELECT " +
-                "[id] as [Идентификатор], " +
-                "[name] as [Название], " +
-                "[passport] as [Паспорт], " +
-                "[photo] as [Фото], " +
-                "[status] as [Состояние], " +
-                "[priority] as [Приоритет] " +
-                "FROM [RoadObject];");
-
-            dataGridView.DataSource = ds.Tables[0].DefaultView;
         }
     }
 }
