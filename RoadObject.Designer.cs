@@ -29,8 +29,10 @@
         private void InitializeComponent()
         {
             splitContainer1 = new SplitContainer();
+            comboBox = new ComboBox();
             dataGridView = new DataGridView();
             ((System.ComponentModel.ISupportInitialize)splitContainer1).BeginInit();
+            splitContainer1.Panel1.SuspendLayout();
             splitContainer1.Panel2.SuspendLayout();
             splitContainer1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView).BeginInit();
@@ -46,6 +48,7 @@
             // splitContainer1.Panel1
             // 
             splitContainer1.Panel1.AutoScroll = true;
+            splitContainer1.Panel1.Controls.Add(comboBox);
             // 
             // splitContainer1.Panel2
             // 
@@ -53,6 +56,17 @@
             splitContainer1.Size = new Size(784, 441);
             splitContainer1.SplitterDistance = 135;
             splitContainer1.TabIndex = 0;
+            // 
+            // comboBox
+            // 
+            comboBox.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            comboBox.FormattingEnabled = true;
+            comboBox.Location = new Point(12, 12);
+            comboBox.MaxDropDownItems = 5;
+            comboBox.Name = "comboBox";
+            comboBox.Size = new Size(120, 25);
+            comboBox.TabIndex = 0;
+            comboBox.Text = "выбрать год";
             // 
             // dataGridView
             // 
@@ -78,6 +92,7 @@
             Name = "RoadObject";
             Text = "Дорожные объекты";
             WindowState = FormWindowState.Maximized;
+            splitContainer1.Panel1.ResumeLayout(false);
             splitContainer1.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)splitContainer1).EndInit();
             splitContainer1.ResumeLayout(false);
@@ -89,5 +104,6 @@
 
         private SplitContainer splitContainer1;
         private DataGridView dataGridView;
+        private ComboBox comboBox;
     }
 }

@@ -8,6 +8,8 @@ namespace DecisionSupportSystem
         {
             InitializeComponent();
             SelectRoadObject();
+
+            DataSet ds = DatabaseContext.ExecuteQuery("");
         }
 
         private void SelectRoadObject()
