@@ -61,12 +61,15 @@
             // 
             comboBox.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
             comboBox.FormattingEnabled = true;
+            comboBox.ImeMode = ImeMode.NoControl;
+            comboBox.IntegralHeight = false;
+            comboBox.ItemHeight = 17;
             comboBox.Location = new Point(12, 12);
             comboBox.MaxDropDownItems = 5;
             comboBox.Name = "comboBox";
             comboBox.Size = new Size(120, 25);
             comboBox.TabIndex = 0;
-            comboBox.Text = "выбрать год";
+            comboBox.Text = "выбор года";
             // 
             // dataGridView
             // 
