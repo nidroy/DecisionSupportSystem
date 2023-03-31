@@ -8,18 +8,8 @@ namespace DecisionSupportSystem
         {
             InitializeComponent();
             SelectRoadObject();
-
-            DataSet ds = DatabaseContext.ExecuteQuery("" +
-                "SELECT [number] " +
-                "FROM [Date] " +
-                "JOIN [Year] " +
-                "ON [Date].[year_id] = [Year].[id];");
-
-            for (int i = 0; i < ds.Tables[0].Rows.Count; i++)
-            {
-                comboBox.Items.Add(ds.Tables[0].Rows[i][0].ToString());
-            }
         }
+
 
         private void SelectRoadObject()
         {
@@ -32,6 +22,13 @@ namespace DecisionSupportSystem
                 "FROM [RoadObject];");
 
             dataGridView.DataSource = ds.Tables[0].DefaultView;
+        }
+
+        private void showWorks_Click(object sender, EventArgs e)
+        {
+            int id = Convert.ToInt32(dataGridView.CurrentRow.Cells[0].Value);
+            RoadWork roadWork = new RoadWork(id);
+            roadWork.ShowDialog();
         }
     }
 }
